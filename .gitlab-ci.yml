@@ -19,7 +19,7 @@ staging:
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
-    - dpl --provider=heroku --app=<your-frontend-app-name> --api-key=$HEROKU_STAGING_API_KEY
-    - dpl --provider=heroku --app=<your-backend-app-name> --api-key=$HEROKU_STAGING_API_KEY
+    - dpl --provider=heroku --app=secfit-frontend-9 --api-key=$HEROKU_STAGING_API_KEY
+    - dpl --provider=heroku --app=secfit-backend-9 --api-key=$HEROKU_STAGING_API_KEY
   only:
     - master
