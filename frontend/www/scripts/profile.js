@@ -42,6 +42,26 @@ async function getProfile() {
   document.querySelector('input[name="email"]').value = data.email;
 }
 
+function openModal() {
+  document.getElementById("backdrop").style.display = "block";
+  document.getElementById("exampleModal").style.display = "block";
+  document.getElementById("exampleModal").classList.add("show");
+}
+function closeModal() {
+  document.getElementById("backdrop").style.display = "none";
+  document.getElementById("exampleModal").style.display = "none";
+  document.getElementById("exampleModal").classList.remove("show");
+}
+// Get the modal
+var modal = document.getElementById("exampleModal");
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    closeModal();
+  }
+};
+
 async function deleteProfile() {
   let form = document.querySelector("#form-update-user");
   let formData = new FormData(form);
@@ -80,7 +100,7 @@ document
 
 document
   .querySelector("#btn-delete-account")
-  .addEventListener("click", async (event) => await deleteProfile(event));
+  .addEventListener("click", async (event) => await openModal(event));
 
 window.addEventListener("DOMContentLoaded", () => {
   getProfile();
