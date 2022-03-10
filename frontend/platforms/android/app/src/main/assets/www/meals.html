@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meals</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/0ce6c392ca.js" crossorigin="anonymous"></script>
+    <script src="scripts/navbar.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <navbar-el></navbar-el>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg text-center">
+                <h3 class="mt-5">View meals</h3>
+                <p>Here you can view your logged meals. Click on a meal to view its details.</p>
+                <input type="button" class="btn btn-success" id="btn-create-meal" value="Log new meal">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg text-center">
+                <div class="mt-1">Sort by: <a href="?ordering=date">Date</a> <a href="?ordering=name">Name</a>
+                    <br>Currently sorting by: <span id="current-sort"></span>
+                </div>
+                <div class="list-group mt-1" id="div-content"></div>
+              </div>
+        </div>
+
+    </div>
+
+    <template id="template-meal">
+        <a class="list-group-item list-group-item-action flex-column align-items-start my-1 meal">
+            <div class="d-flex w-100 justify-content-between align-items-center">
+                <h5 class="mb-1"></h5>
+            </div>
+            <div class="d-flex">
+                <table class="mb-1 text-start">
+                    <tr><td>Date:</td><td></td></tr>
+                    <tr><td>Time:</td><td></td></tr>
+                    <tr><td>Owner:</td><td></td></tr>
+                </table>       
+            </div>
+        </a>
+    </template>
+
+    <script src="scripts/defaults.js"></script>
+    <script src="scripts/scripts.js"></script>
+    <script src="scripts/meals.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
