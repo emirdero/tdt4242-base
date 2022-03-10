@@ -205,4 +205,23 @@ function createAlert(header, data) {
   return alertDiv;
 }
 
+function createSuccessAlert(header) {
+  let alertDiv = document.createElement("div");
+  alertDiv.className = "alert alert-success alert-dismissible fade show";
+  alertDiv.setAttribute("role", "alert");
+
+  let strong = document.createElement("strong");
+  strong.innerText = header;
+  alertDiv.appendChild(strong);
+
+  let button = document.createElement("button");
+  button.type = "button";
+  button.className = "btn-close";
+  button.setAttribute("data-bs-dismiss", "alert");
+  button.setAttribute("aria-label", "Close");
+  alertDiv.appendChild(button);
+
+  return alertDiv;
+}
+
 window.addEventListener("DOMContentLoaded", updateNavBar);

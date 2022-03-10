@@ -4,7 +4,6 @@ from django.contrib.auth import get_user_model
 
 
 class CustomUserCreationForm(UserCreationForm):
-
     phone_number = forms.CharField(max_length=50)
     country = forms.CharField(max_length=50)
     city = forms.CharField(max_length=50)
