@@ -47,6 +47,9 @@ class Meal(models.Model):
     owner = models.ForeignKey(
         get_user_model(), on_delete=models.CASCADE, related_name="meals"
     )
+    assigned_athlete = models.ForeignKey(
+        get_user_model(), on_delete=models.CASCADE, related_name="coach_meals", null=True, default=None
+    )
 
     class Meta:
         ordering = ["-date"]

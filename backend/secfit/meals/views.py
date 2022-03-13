@@ -63,6 +63,7 @@ class MealList(
     ordering_fields = ["name", "date", "owner__username"]
 
     def get(self, request, *args, **kwargs):
+        print(request)
         return self.list(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
@@ -74,7 +75,7 @@ class MealList(
     def get_queryset(self):
         qs = Meal.objects.none()
         if self.request.user:
-            qs = Meal.objects.filter(Q(owner=self.request.user)).distinct()
+            qs = Meal.objects.filter(Q(owner=self.request.user) | Q(assigned_athlete=self.request.user)).distinct()
         return qs
 
 class MealDetail(

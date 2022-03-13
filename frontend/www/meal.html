@@ -21,47 +21,53 @@
             </div>
         </div>
       <form class="row g-3 mb-4" id="form-meal">
-          <div class="col-lg-6 ">
+          <div class="col-lg-7 ">
             <label for="inputName" class="form-label">Name</label>
             <input type="text" class="form-control" id="inputName" name="name" readonly>
           </div>
-          <div class="col-lg-6"></div>
-          <div class="col-lg-6">
+          <div class="col-lg-7"></div>
+          <div class="col-lg-7">
             <label for="inputDateTime" class="form-label">Date/Time</label>
             <input type="datetime-local" class="form-control" id="inputDateTime" name="date" readonly>
           </div>
-          <div class="col-lg-6"></div>
-          <div class="col-lg-6">
+          <div class="col-lg-7"></div>
+          <div class="col-lg-7">
               <label for="inputOwner" class="form-label">Owner</label>
               <input type="text" class="form-control" id="inputOwner" name="owner_username" readonly>
           </div>
-          <div class="col-lg-6"></div>
-          <div class="col-lg-6">
+          <div class="col-lg-7">
+            <label for="inputAthlete" class="form-label">Assign to athlete</label>
+            <select class="form-select" id="inputAthlete" name="assigned_athlete">
+              <option selected>Select athlete</option>
+            </select>
+          </div>
+          <div class="col-lg-7"></div>
+          <div class="col-lg-7">
             <label for="inputNotes" class="form-label">Notes</label>
             <textarea class="form-control" id="inputNotes" name="notes" readonly></textarea>
           </div>
-          <div class="col-lg-6"></div>
-          <div class="col-lg-6">
+          <div class="col-lg-7"></div>
+          <div class="col-lg-7">
             <label for="inputCalories" class="form-label">Calories</label>
             <input type="number" class="form-control" id="inputCalories" name="calories" readonly></input>
           </div>
-          <div class="col-lg-6"></div>
-          <div class="col-lg-6">
+          <div class="col-lg-7"></div>
+          <div class="col-lg-7">
             <div class="input-group">
                 <input type="file" class="form-control" id="customFile" name="files" multiple disabled>
             </div>
             <div id="uploaded-files" class="ms-1 mt-2">            
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-7">
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-7">
             <input type="button" class="btn btn-primary hide" id="btn-ok-meal" value="  OK  ">
             <input type="button" class="btn btn-primary hide" id="btn-edit-meal" value=" Edit ">
             <input type="button" class="btn btn-secondary hide" id="btn-cancel-meal" value="Cancel">
             <input type="button" class="btn btn-danger float-end hide" id="btn-delete-meal" value="Delete">
           </div>
-          <div class="col-lg-6"></div>
+          <div class="col-lg-7"></div>
         </form>
     </div> 
     

@@ -55,6 +55,7 @@ class MealSerializer(serializers.HyperlinkedModelSerializer):
             "owner",
             "owner_username",
             "files",
+            "assigned_athlete",
         ]
         extra_kwargs = {"owner": {"read_only": True}}
 
@@ -72,7 +73,7 @@ class MealSerializer(serializers.HyperlinkedModelSerializer):
         files_data = []
         if "files" in validated_data:
             files_data = validated_data.pop("files")
-
+        print("Validated data", validated_data)
         meal = Meal.objects.create(**validated_data)
 
         for file_data in files_data:

@@ -8,7 +8,7 @@ class IsOwner(permissions.BasePermission):
     """Checks whether the requesting user is also the owner of the existing object"""
 
     def has_object_permission(self, request, view, obj):
-        return obj.owner == request.user
+        return (obj.owner == request.user) or (obj.assigned_athlete == request.user)
 
 
 class IsOwnerOfMeal(permissions.BasePermission):
@@ -20,7 +20,7 @@ class IsOwnerOfMeal(permissions.BasePermission):
                 meal_id = request.data["meal"].split("/")[-2]
                 meal = Meal.objects.get(pk=meal_id)
                 if meal:
-                    return meal.owner == request.user
+                    return (meal.owner == request.user) or (meal.assigned_athlete == request.user)
             return False
 
         return True
