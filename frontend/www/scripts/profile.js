@@ -1,12 +1,17 @@
 async function updateProfile(event) {
   let form = document.querySelector("#form-update-user");
   let formData = new FormData(form);
-
+  let body = {
+    username: formData.get("username"),
+    phone_number: formData.get("phone_number"),
+    country: formData.get("country"),
+    city: formData.get("city"),
+    street_address: formData.get("street_address"),
+  };
   let response = await sendRequest(
     "PATCH",
     `${HOST}/api/users/` + sessionStorage.getItem("username") + "/",
-    formData,
-    ""
+    body
   );
 
   if (!response.ok) {
