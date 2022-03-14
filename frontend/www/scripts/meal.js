@@ -18,6 +18,7 @@ async function retrieveMeal(id) {
     for (let key of formData.keys()) {
       let selector = `input[name="${key}"], textarea[name="${key}"]`;
       if (key == "assigned_athlete") {
+        // Check whether the athlete is you or you are the coach
         if (mealData["owner_username"] != sessionStorage.getItem("username")) {
           let athlete_option = document.createElement("option");
           athlete_option.value = mealData[key];

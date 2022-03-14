@@ -5,14 +5,14 @@ from meals.models import Meal
 
 
 class IsOwner(permissions.BasePermission):
-    """Checks whether the requesting user is also the owner of the existing object"""
+    """Checks whether the requesting user is also the owner of the existing object or the assigned athlete"""
 
     def has_object_permission(self, request, view, obj):
         return (obj.owner == request.user) or (obj.assigned_athlete == request.user)
 
 
 class IsOwnerOfMeal(permissions.BasePermission):
-    """Checks whether the requesting user is also the owner of the new or existing object"""
+    """Checks whether the requesting user is also the owner of the new or existing object or the assigned athlete"""
 
     def has_permission(self, request, view):
         if request.method == "POST":
