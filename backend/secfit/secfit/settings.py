@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "comments.apps.CommentsConfig",
     "corsheaders",
+    "django_nose",
 ]
 
 MIDDLEWARE = [
@@ -97,6 +98,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "secfit.wsgi.application"
 
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell nose to measure coverage on the 'foo' and 'bar' apps
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=workouts.permissions,users.serializers',
+]
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
