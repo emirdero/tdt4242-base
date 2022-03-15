@@ -1,15 +1,16 @@
 stages:
-    - test
-    - staging
-  
+  - test
+  - staging
+
 test:
   image: python:3.8
   stage: test
   script:
-  # this configures Django application to use attached postgres database that is run on `postgres` host
+    # this configures Django application to use attached postgres database that is run on `postgres` host
     - cd backend/secfit
     - apt-get update -qy
-    - pip install -r requirements.txt
+    - pip install -r requirements.txt'
+    - python manage.py test
 
 staging:
   type: deploy
